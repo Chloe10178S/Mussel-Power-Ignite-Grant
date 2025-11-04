@@ -1,20 +1,26 @@
 # Mussel Power
 
-**Team Members:** Chloe Bendenoun, Christian Friis, Catarina Lorenzo  
+**Team Members:** Chloe Bendenoun, Christian Friis, Catarina Lorenzo, Madeleine Abu  
 **Project Title:** Mussel Power
 
 ---
 
 ## Project Summary
 
-### The Problem 
+### The Problem
 
-Globally, a staggering 80% of wastewater is released into our environment untreated, contaminating the water we need for basic hygiene, agriculture, and recreation. We are stuck between two flawed approaches:
+Many water bodies are contaminated with pathogens and harmful algae. We are stuck between two flawed approaches:
 
-- **The Industrial Method:** Brute-force industrial plants that are incredibly energy-intensive to run and set up.
-- **The Natural Method:** Mussels are brilliant filters, but they are just inefficient sponges. They absorb toxins without destroying them, a process which is ultimately fatal to the mussels themselves. To actually remove those pollutants from the water, the mussels must then be manually harvested—a process that is slow, costly, and not scalable.
+- **Natural mussels** filter water but accumulate pathogens without killing them, making them unsuitable for safe purification. Moreover, mussels themselves are fragile:  
+  - They bioaccumulate toxins and pathogens, eventually dying and releasing pollutants back into the water  
+  - They depend on specific ecosystems; introducing them artificially risks upsetting local biodiversity  
+  - They cannot survive in highly polluted or warm waters, limiting practical use 
+- **Existing mechanical or chemical solutions** are often:
+  - Energy-intensive
+  - Not adaptive
+  - Ineffective under variable water conditions (flow, turbidity, pathogen density)
 
-We have a choice between brute-force energy waste and an inefficient, labor-intensive natural process that harms the very creatures trying to help.
+**Challenge:** Design a system that actively kills pathogens while remaining energy-efficient and adaptive, even as the pod moves through different parts of a water body.
 
 ### Our Solution
 
@@ -28,42 +34,6 @@ Our solution is an end-to-end system with three core parts:
   - It is safe from the moment it's deployed, using a **formula-based initialization** to ensure effective purification even before the AI has fully learned.
   - It is robust, using its **dual control** over UV intensity and cilia vibration to handle even extreme changes in water turbidity or flow.
   - Most importantly, it is **energy-efficient**, continuously learning and calculating the absolute minimum energy required to keep the water safe. This isn't just automation; it's a self-optimizing system that makes purification radically more efficient.
-
----
-
-## Problem
-
-- Many water bodies are contaminated with pathogens and harmful algae.  
-- Natural mussels filter water but accumulate pathogens without killing them, making them unsuitable for safe purification. Moreover, mussels themselves are fragile:  
-  - They bioaccumulate toxins and pathogens, eventually dying and releasing pollutants back into the water.  
-  - They depend on specific ecosystems; introducing them artificially risks upsetting local biodiversity.  
-  - They cannot survive in highly polluted or warm waters, limiting practical use. 
-- Existing mechanical or chemical solutions are often:
-  - Energy-intensive,
-  - Not adaptive, or
-  - Ineffective under variable water conditions (flow, turbidity, pathogen density).
-
-**Challenge:** Design a system that actively kills pathogens while remaining energy-efficient and adaptive, even as the pod moves through different parts of a water body.
-
----
-
-## Solution: Mussel Power
-
-**Autonomous filtration pods** that:
-
-- Mimic mussels’ water flow channels,
-- Use cilia/vibration to control water flow (residence time in UV chamber),
-- Use UV light to kill pathogens in real-time.
-
-**Key innovation:** dual-variable control — both vibration frequency and UV intensity are optimized continuously by Reinforcement Learning (RL).
-
-**Advantages:**
-
-- Adaptive: works in unknown or fluctuating water conditions.  
-- Energy-efficient: minimizes energy while maximizing pathogen kill.  
-- Safe: formula-based initialization ensures safe first-time operation.  
-- Robust: dual controls handle extreme turbidity or flow changes.  
-- Testing: minimal sensors, outputs, fully demonstrable via simulation.
 
 ---
 
@@ -87,9 +57,7 @@ It then chooses:
 ### 2. Learning Through Rewards
 The agent optimizes a **reward function**:
 
-\[
-\text{Reward} = \text{Pathogen Kill Effect} - \text{Energy Cost}
-\]
+`Reward = Pathogen Kill Effect - Energy Cost`
 
 - Positive reward: more pathogens killed with minimal energy.  
 - Negative reward: high energy use with low cleaning effect.
