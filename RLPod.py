@@ -320,14 +320,14 @@ if __name__ == "__main__":
             if done:
                 break
 
-        print(f"✅ Episode {ep+1} finished — total reward {episode_reward:.3f}")
+        print(f" Episode {ep+1} finished — total reward {episode_reward:.3f}")
 
     # Save outputs CSV
     pd.DataFrame(output_actions).to_csv(OUTPUT_CSV, index=False)
     agent.save()
-    print(f"\n💾 Input CSV: {INPUT_CSV}")
-    print(f"💾 Output CSV: {OUTPUT_CSV}")
-    print("✅ DDPG simulation loop finished.")
+    print(f"\n Input CSV: {INPUT_CSV}")
+    print(f" Output CSV: {OUTPUT_CSV}")
+    print(" DDPG simulation loop finished.")
 
     
     
