@@ -107,4 +107,8 @@ SmartPod is adaptive, not static:
 
 ## Link to App
 
-https://aqua-pure-ai-copy-935903c1.base44.app/RLAgent
+https://mussel-power-935903c1.base44.app
+
+## Link to Website
+
+https://mussel-power-ai.com/
